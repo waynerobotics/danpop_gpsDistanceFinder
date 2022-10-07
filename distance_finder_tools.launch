@@ -1,0 +1,11 @@
+<launch>
+
+    <node pkg="gps_tool" type="dummyGps.py" name="dummyGps" />
+
+    <node pkg="gps_common" type="utm_odometry_node" name="utm_conversion">
+        <remap from="odom" to="utm_current" />
+    </node>
+   
+    <node pkg="gps_tool" type="distance_finder.py" name="distance_finder" />
+
+</launch>
